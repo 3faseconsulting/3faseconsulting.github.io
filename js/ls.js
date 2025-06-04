@@ -21,8 +21,8 @@ const translations = {
   hrsb2: "Using integrated approaches to processes and technologies, we expand possibilities for operational improvements and developments of new business models.",
   // nossa-atuação
   natt1: "What we do",
-  nasb1: "At 3fase, we go beyond technical delivery. Our team integrates innovative processes, advanced technologies, and specialized consulting.",
-  nasb2: "We offer customized solutions that promote efficiency, productivity and safety in your operations, even enabling new business development opportunities.",
+  nasb1: "3fase provides technical consulting services, integrating innovative processes, advanced technologies, and strategic partners.",
+  nasb2: "We offer tailored solutions that enhance operational efficiency, boost productivity, and ensure safety, creating a fertile environment for the emergence and development of new businesses.",
   // nossa-atuação/lista
   latt1: "SYSTEMS AND INFRASCTRUCTURE",
   ladc1: "IT/TO environment analysis to identify opportunities for resources optimization.",
