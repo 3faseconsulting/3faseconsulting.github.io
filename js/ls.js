@@ -65,7 +65,7 @@ const translations = {
   lttt2: "GENERATIVE AI",
   ltdc2: "Advanced learning models designed to create innovative content based on recognized patterns.",
   lttt3: "INTERNET OF THINGS",
-  ltdc3: "IoC allows connected devices to collect, share, and real-time data processing.",
+  ltdc3: "IoT allows connected devices to collect, share, and real-time data processing.",
   lttt4: "COMPUTER VISION",
   ltdc4: "Advanced techniques for interpreting and analyzing visual information, enhancing efficiency and precision in complex industrial processes.",
   lttt5: "ANALYTICS",
