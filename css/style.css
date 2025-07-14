@@ -1,4 +1,8 @@
 /* ------------------------------------------
+-- 3fase
+--------------------------------------------> */
+
+/* ------------------------------------------
 -- Fontes de caracteres
 --------------------------------------------> */
 @import url('fonts.css');
@@ -119,6 +123,14 @@ body {
 	padding-left: 2.5rem;			 /* adiciona preenchimento lateral esquerdo à logo */
 }
 
+.header-container .wrapper .icon {
+    display: 		 none; 						/* oculta o ícone hamburguer na tela */
+	color: 			 var(--cor-header-mainnav); /* define a cor da fonte */
+	font-weight:   	 var(--fonte-style-bold);   /* define o estilo da fonte */
+    text-decoration: none; 					    /* remove o sublinhado padrão dos links (<a>) - obs: não remove a cor */
+    margin-right: 	 1.4rem; 					/* adiciona margem lateral direita ao ícone */
+}
+
 .header-container .wrapper .mainnav {
     display: 		inline; 				    	/* faz o menu se comportar como parte do texto, ficando fica na mesma linha que outros elementos, não quebrando linha automaticamente (só se o espaço acabar) */
     text-align:		right; 						  	/* alinha o texto à direita no elemento */
@@ -127,18 +139,13 @@ body {
     line-height: 	1.24rem;						/* define o espaçamento vertical entre as linhas do texto */
     padding: 		0.75rem 1rem 0.75rem 0;			/* adiciona preenchimento ao menu */
 }
+
 .header-container .wrapper .mainnav a {
     color: 			 var(--cor-header-mainnav); /* define a cor da fonte */
     text-decoration: none;						/* remove o sublinhado padrão dos links (<a>) - obs: não remove a cor */
 	padding: 		 0.4rem 1rem 0.2rem 1rem;   /* adiciona preenchimento ao menu */
 }
-.header-container .wrapper .icon {
-    display: 		 none; 						/* oculta o ícone hamburguer na tela */
-	color: 			 var(--cor-header-mainnav); /* define a cor da fonte */
-	font-weight:   	 var(--fonte-style-bold);   /* define o estilo da fonte */
-    text-decoration: none; 					    /* remove o sublinhado padrão dos links (<a>) - obs: não remove a cor */
-    margin-right: 	 1.4rem; 					/* adiciona margem lateral direita ao ícone */
-}
+
 .header-container .wrapper .mainnav .language {
     font-size: 		9pt;		/* define o tamanho da fonte */
     text-transform: uppercase;	/* converte todas as letras para maiúsculas */
@@ -209,14 +216,14 @@ body {
 	text-align: 	 left;   /* alinha o texto à esquerda no elemento (sempre bom garantir) */ 
 }
 
-.hero-container .wrapper .detalhe .descricao-paragrafo-1 {
+.hero-container .wrapper .detalhe .descricao-1 {
     color:         var(--cor-hero-descricao); /* define a cor da fonte */
     font-size:     1.38rem;					  /* define o tamanho da fonte */
     line-height:   2.1rem;					  /* define o espaçamento vertical entre as linhas do texto */
     margin-bottom: 1rem;					  /* define o espaçamento vertical abaixo do elemento */
 }
 
-.hero-container .wrapper .detalhe .descricao-paragrafo-2 {
+.hero-container .wrapper .detalhe .descricao-2 {
     color:         var(--cor-hero-descricao); /* define a cor da fonte */
     font-size:     1.38rem;					  /* define o tamanho da fonte */
     line-height:   2.1rem;					  /* define o espaçamento vertical entre as linhas do texto */
@@ -236,7 +243,7 @@ body {
 	display: 	 	flex;	  	/* ativa o Flexbox, permitindo alinhar e controlar os elementos do wrapper em linha (default) ou coluna */
 	flex-direction: column; 	/* define o eixo principal como vertical, organizando os elementos em coluna e empilhando verticalmente título (h2), subtítulo e descrições. Sem isso, os conteúdos ficariam lado a lado, quebrando o layout */
 	align-items: 	felx-start; /* alinha os elementos à esquerda, no início do eixo horizontal (secundário) */ 	 
-	max-width: 	  	1400px; 	/* limita o espaço para o texto + imagem, garantindo que o layout mantenha proporção harmoniosa em diferentes tamanhos de tela */
+	max-width: 	  	1400px; 	/* limita o espaço para o texto e os mini-blocos, garantindo que o layout mantenha proporção harmoniosa em diferentes tamanhos de tela */
 	margin: 	 	0 auto; 	/* atua fora do flexbox, centralizando horizontalmente o wrapper e o seu bloco de conteúdo dentro do container. Como .wrapper tem uma largura definida (width, max-width), margin: 0 auto cria espaçamento igual nas laterais até atingir esse limite. (responsividade) */
 }
 
@@ -269,58 +276,58 @@ body {
 }
 
 /* ------------------------------------------
--- Subseção NOSSA ATUAÇÃO/LISTA
+-- Subseção NOSSA ATUAÇÃO/MINI-BLOCOS
 --------------------------------------------> */
-.nossa-atuacao-container .wrapper .lista-container { 
+.nossa-atuacao-container .wrapper .mini-blocos-container { 
 	background-color: var(--cor-nossa-atuacao-fundo); /* define a cor do background */
-	display: 		 flex;       /* ativa o Flexbox, permitindo alinhar e controlar os elementos do wrapper em linha (default) ou coluna */
+	display: 		 flex;       /* ativa o Flexbox, permitindo alinhar e controlar os mini-blocos do wrapper em linha (default) ou coluna */
     flex-wrap: 		 wrap;		 /* permite quebrar linha se o espaço não for suficiente (responsividade) */
     gap: 			 2rem;		 /* cria espaçamento uniforme entre os blocos de conteúdo, mantendo-os organizados visualmente e melhorando a legibilidade e experiência do usuário em layouts responsivos */
-    justify-content: center;	 /* centraliza os elementos lado a lado horizontalmente */
-    align-items: 	 flex-start; /* centraliza os elementos ao longo do eixo vertical (secundário) */
-	width: 			 100%;		 /* garante que o container ocupe todo o espaço horizontal do elemento-pai body() */
-    max-width: 		 1400px;     /* limita a largura máxima para evitar que os elementos fiquem muito espaçados uns dos outros em telas grandes - Este valor foi diminuído na lista de tecnologias para não espaçar demais os elementos da lista*/
+    justify-content: center;	 /* centraliza os mini-blocos lado a lado horizontalmente */
+    align-items: 	 flex-start; /* centraliza os mini-blocos ao longo do eixo vertical (secundário) */
+	width: 			 100%;		 /* garante a ocupação de todo o espaço do wrapper, não excedento o limite estabelecido por max-width */ 
+    max-width: 		 1400px;     /* limita a largura máxima para evitar que os mini-blocos fiquem muito espaçados uns dos outros em telas grandes - Este valor foi diminuído na lista de tecnologias para não espaçar demais os mini-blocos */
 	margin: 		 0 auto;	 /* atua fora do flexbox, centralizando horizontalmente o wrapper e o seu bloco de conteúdo dentro do container. Como .wrapper tem uma largura definida (width, max-width), margin: 0 auto cria espaçamento igual nas laterais até atingir esse limite. (responsividade) */
 	box-sizing: 	 border-box; /* inclui padding e border dentro do cálculo de width e height, evitando que o .lista-container fique maior do que o esperado e garantindo que os itens se alinhem perfeitamente no centro, mesmo com paddings ou borders */
 }
 
-.nossa-atuacao-container .wrapper .lista-container .elemento {
-    display: 		flex;   /* D ativa o Flexbox, permitindo alinhar e controlar os elementos do wrapper em linha (default) ou coluna */
-    flex-direction: column; /* D define o eixo principal como vertical, empilhando o ícone, título e descrição que compõem o elemento */
-    align-items: 	center;	/* D centraliza os elementos ao longo do eixo horizontal (secundário) */ 
-    text-align: 	center; /* D centraliza o texto dentro do elemento */
-    width: 			180px;  /* D define a largra do elemento */
-    min-width: 		180px;  /* D define a largura mínima do elemento */
-    max-width: 		200px;  /* D define a largura máxima do elemento */
+.nossa-atuacao-container .wrapper .mini-blocos-container .mini-bloco {
+    display: 		flex;   /* ativa o Flexbox, permitindo alinhar e controlar os mini-blocos do wrapper em linha (default) ou coluna */
+    flex-direction: column; /* define o eixo principal como vertical, empilhando o ícone, título e descrição que compõem o elemento */
+    align-items: 	center;	/* centraliza os mini-blocos ao longo do eixo horizontal (secundário) */ 
+    text-align: 	center; /* centraliza o texto dentro do elemento */
+    width: 			180px;  /* define a largra do elemento */
+    min-width: 		180px;  /* define a largura mínima do mini-bloco */
+    max-width: 		200px;  /* define a largura máxima do mini-bloco */
 }
 
-.nossa-atuacao-container .wrapper .lista-container .elemento .icone img { 
+.nossa-atuacao-container .wrapper .mini-blocos-container .mini-bloco .icone img { 
 	display: block; 	    /* converte o ícone em um bloco para que respeite as dimensões definidas e não gere espaços colaterais indesejados */
 	width: 50px;		    /* define a largra do elemento */
 	margin-bottom: 0.3rem;  /* define o espaçamento vertical abaixo do elemento */
 	padding: 1rem 0rem 0 0; /* adiciona preenchimento ao redor do ícone */
 }
 
-.nossa-atuacao-container .wrapper .lista-container .elemento .texto {
+.nossa-atuacao-container .wrapper .mini-blocos-container .mini-bloco .texto {
 	text-align: center; /* centraliza o texto dentro do elemento */
     width: 		180px;  /* define a largra do texto */
 	max-width:  400px;  /* define a largura máxima do texto */
 }
 
-.nossa-atuacao-container .wrapper .lista-container .elemento .texto h3 { 
-    font-size: 	   1rem;					/* define o tamanho da fonte */
+.nossa-atuacao-container .wrapper .mini-blocos-container .mini-bloco .texto h3 { 
 	color:         var(--cor-nossa-atuacao-list-titulo);  /* D define a cor da fonte */
+    font-size: 	   1rem;					/* define o tamanho da fonte */
 	font-weight:   var(--fonte-style-bold); /* define o estilo da fonte */
 	line-height:   1rem;					/* define o espaçamento vertical entre as linhas do texto */
 	margin-top:    0.7rem;					/* define o espaçamento vertical acima do elemento */
 	margin-bottom: 0.5rem;					/* define o espaçamento vertical abaixo do elemento */
 }
 
-.nossa-atuacao-container .wrapper .lista-container .elemento .texto p { 
-    font-size: 	1rem;				  /* define o tamanho da fonte */
+.nossa-atuacao-container .wrapper .mini-blocos-container .mini-bloco .texto p { 
 	color: var(--cor-nossa-atuacao-list-descricao); /* D define a cor da fonte */ 
-	line-height:   1.25rem;			  /* define o espaçamento vertical entre as linhas do texto */
-	margin: 0;
+    font-size: 	 1rem;	  /* define o tamanho da fonte */
+	line-height: 1.25rem; /* define o espaçamento vertical entre as linhas do texto */
+	margin: 	 0;		  /* remove as margens padrão do texto */
 }
 
 /* ------------------------------------------
@@ -444,7 +451,7 @@ body {
 .tecnologias-container {
 	background-color: var(--cor-tecnologias-fundo); /* define a cor do background */
 	width: 			100%; /* garante que o container ocupe todo o espaço horizontal do elemento-pai body() */
-	padding-top:	3rem; /* adiciona preenchimento acima no container */
+	padding-top:	3rem; /* adiciona preenchimento acima no container  */
 	padding-bottom: 4rem; /* adiciona preenchimento abaixo no container */
 }
 
@@ -452,7 +459,7 @@ body {
 	display: 	 	flex;	  	/* ativa o Flexbox, permitindo alinhar e controlar os elementos do wrapper em linha (default) ou coluna */
 	flex-direction: column; 	/* define o eixo principal como vertical, organizando os elementos em coluna e empilhando verticalmente título (h2), subtítulo e descrições. Sem isso, os conteúdos ficariam lado a lado, quebrando o layout */
 	align-items: 	felx-start; /* alinha os elementos à esquerda, no início do eixo horizontal (secundário) */ 	 
-	max-width: 	  	1400px; 	/* limita o espaço para o texto + imagem, garantindo que o layout mantenha proporção harmoniosa em diferentes tamanhos de tela */
+	max-width: 	  	1400px; 	/* limita o espaço para o texto e mini-blocos, garantindo que o layout mantenha proporção harmoniosa em diferentes tamanhos de tela */
 	margin: 	 	0 auto; 	/* atua fora do flexbox, centralizando horizontalmente o wrapper e o seu bloco de conteúdo dentro do container. Como .wrapper tem uma largura definida (width, max-width), margin: 0 auto cria espaçamento igual nas laterais até atingir esse limite. (responsividade) */
 }
 
@@ -485,46 +492,46 @@ body {
 }
 
 /* ------------------------------------------
--- Subseção TECNOLOGIAS/LISTA
+-- Subseção TECNOLOGIAS/MINI-BLOCOS
 --------------------------------------------> */
-.tecnologias-container .wrapper .lista-container { 
+.tecnologias-container .wrapper .mini-blocos-container { 
 	background-color: var(--cor-tecnologias-fundo); /* define a cor do background */
-	display: 		 flex;       /* ativa o Flexbox, permitindo alinhar e controlar os elementos do wrapper em linha (default) ou coluna */
+	display: 		 flex;       /* ativa o Flexbox, permitindo alinhar e controlar os mini-blocos do wrapper em linha (default) ou coluna */
     flex-wrap: 		 wrap;		 /* permite quebrar linha se o espaço não for suficiente (responsividade) */
     gap: 			 2rem;		 /* cria espaçamento uniforme entre os blocos de conteúdo, mantendo-os organizados visualmente e melhorando a legibilidade e experiência do usuário em layouts responsivos */
-	justify-content: center;	 /* centraliza os elementos lado a lado horizontalmente */
-	align-items: 	 flex-start; /* centraliza os elementos ao longo do eixo vertical (secundário) */
-	width: 			 100%;		 /* garante que o container ocupe todo o espaço horizontal do elemento-pai body() */
-    max-width: 		 800px;      /* limita a largura máxima para evitar que os elementos fiquem muito espaçados uns dos outros em telas grandes - Este valor está diferente de nossa-atuacao em função do número de elementos da lista (3 elementos por linha) */
+	justify-content: center;	 /* centraliza os mini-blocos lado a lado horizontalmente */
+	align-items: 	 flex-start; /* centraliza os mini-blocos ao longo do eixo vertical (secundário) */
+	width: 			 100%;		 /* garante a ocupação de todo o espaço do wrapper, não excedento o limite estabelecido por max-width */
+    max-width: 		 800px;      /* limita a largura máxima para evitar que os mini-blocos fiquem muito espaçados uns dos outros em telas grandes - Este valor está diferente de nossa-atuacao em função do número de elementos da lista (3 elementos por linha) */
 	margin: 		 0 auto;	 /* atua fora do flexbox, centralizando horizontalmente o wrapper e o seu bloco de conteúdo dentro do container. Como .wrapper tem uma largura definida (width, max-width), margin: 0 auto cria espaçamento igual nas laterais até atingir esse limite. (responsividade) */
 	box-sizing: 	 border-box; /* inclui padding e border dentro do cálculo de width e height, evitando que o .lista-container fique maior do que o esperado e garantindo que os itens se alinhem perfeitamente no centro, mesmo com paddings ou borders */
 }
 
-.tecnologias-container .wrapper .lista-container .elemento {
-    display: 		flex;    /* ativa o Flexbox, permitindo alinhar e controlar os elementos do wrapper em linha (default) ou coluna */
+.tecnologias-container .wrapper .mini-blocos-container .mini-bloco {
+    display: 		flex;    /* ativa o Flexbox, permitindo alinhar e controlar os mini-blocos do wrapper em linha (default) ou coluna */
 	flex: 			0 1 30%; /* este comando não existe em nossa-atuacao: comece com 30% (flex-basis) da largura disponível no container pai, não cresca além disso (0 - felx-grow), mas encolha se for necessário para caber (1 - flex-shrink) */
 	flex-direction: column;  /* define o eixo principal como vertical, empilhando o ícone, título e descrição que compõem o elemento */
-    align-items: 	center;	 /* centraliza os elementos ao longo do eixo horizontal (secundário) */ 
+    align-items: 	center;	 /* centraliza os mini-blocos ao longo do eixo horizontal (secundário) */ 
     text-align: 	center;  /* centraliza o texto dentro do elemento */
     width: 			180px;   /* define a largra do elemento */
-    min-width: 		180px;   /* define a largura mínima do elemento */
-    max-width: 		200px;   /* define a largura máxima do elemento */
+    min-width: 		180px;   /* define a largura mínima do mini-bloco */
+    max-width: 		200px;   /* define a largura máxima do mini-bloco */
 }
 
-.tecnologias-container .wrapper .lista-container .elemento .icone img { 
+.tecnologias-container .wrapper .mini-blocos-container .mini-bloco .icone img { 
 	display: block; 	    /* converte o ícone em um bloco para que respeite as dimensões definidas e não gere espaços colaterais indesejados */
 	width: 50px;		    /* define a largra do elemento */
 	margin-bottom: 0.3rem;  /* define o espaçamento vertical abaixo do elemento */
 	padding: 1rem 0rem 0 0; /* adiciona preenchimento ao redor do ícone */
 }
 
-.tecnologias-container .wrapper .lista-container .elemento .texto {
+.tecnologias-container .wrapper .mini-blocos-container .mini-bloco .texto {
 	text-align: center; /* centraliza o texto dentro do elemento */
     width: 		180px;  /* define a largra do texto */
 	max-width:  400px;  /* define a largura máxima do texto */
 }
 
-.tecnologias-container .wrapper .lista-container .elemento .texto h3 { 
+.tecnologias-container .wrapper .mini-blocos-container .mini-bloco .texto .titulo { 
     font-size: 	   1rem;								/* define o tamanho da fonte */
 	color:         var(--cor-tecnologias-list-titulo);  /* define a cor da fonte */
 	font-weight:   var(--fonte-style-bold); 			/* define o estilo da fonte */
@@ -533,7 +540,7 @@ body {
 	margin-bottom: 0.5rem;								/* define o espaçamento vertical abaixo do elemento */
 }
 
-.tecnologias-container .wrapper .lista-container .elemento .texto p { 
+.tecnologias-container .wrapper .mini-blocos-container .mini-bloco .texto .descricao { 
 	color: var(--cor-tecnologias-list-descricao); /* D define a cor da fonte */ 
     font-size: 	1rem;				  			  /* define o tamanho da fonte */
 	line-height:   1.25rem;			  			  /* define o espaçamento vertical entre as linhas do texto */
